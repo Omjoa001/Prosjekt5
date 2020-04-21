@@ -185,10 +185,10 @@ class StudentList extends Component {
         <p>In case the game does not start, simply refresh using "ctrl + r" ("cmd+r" for mac users)</p>
         <input id="brukernavn" placeholder="Type in username"></input> <button id="start"> Start game </button>
         <p id="poengsum"> Points: 0 </p>
-        </center>
         <div className="divleft" id="spillBoks">
           <div  id="romskip"></div>
         </div>
+        </center>
     </div>
     );
   }
@@ -239,6 +239,7 @@ class StudentDetails extends Component {
       <div className="divleft">
         <h1>Kilder:</h1>
         For styling av Scoreboard: https://www.w3schools.com/css/css_table.asp
+        For styling av bilder: https://www.w3schools.com/cssref/pr_background-image.asp
       </div>
     );
   }

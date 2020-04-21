@@ -151,23 +151,43 @@ transform: rotate(0deg);
   margin-left: 6rem;
 }
 #spillBoks {
+  background-image: url("../src/Bilder/background3.jpg"); /* The image used */
+  background-color: #cccccc; /* Used if the image is unavailable */
+  height: 500px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+
+  margin-left: -1px;
   margin-top: 50px;
   display: inline-block;
   width: 800px;
   height: 800px;
-  background-color: grey;
   position: relative;
 }
 #romskip {
+  background-image: url("../src/Bilder/romkyter.png"); /* The image used */
+  background-color: transparent; /* Used if the image is unavailable */
+  height: 500px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+
   bottom: 40px;
   left: 400px;
   display: inline-block;
   width: 60px;
   height: 80px;
-  background-color: navy;
   position: absolute;
 }
 .laserClass {
+  background-image: url("../src/Bilder/romkyter.png"); /* The image used */
+  background-color: transparent; /* Used if the image is unavailable */
+  height: 500px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+
   bottom: 120px;
   display: inline-block;
   width: 10px;

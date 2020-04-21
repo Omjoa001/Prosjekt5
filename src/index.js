@@ -185,10 +185,10 @@ class Game extends Component {
         <p>In case the game does not start, simply refresh using "ctrl + r" ("cmd+r" for mac users)</p>
         <input id="brukernavn" placeholder="Type in username"></input> <button id="start"> Start game </button>
         <p id="poengsum"> Points: 0 </p>
-        </center>
         <div className="divleft" id="spillBoks">
           <div  id="romskip"></div>
         </div>
+        </center>
     </div>
     );
   }
@@ -204,6 +204,7 @@ class HowToPlay extends Component {
     );
   }
   }
+
 
 class Resources extends Component {
   //<th href="https://fontawesome.com/"><img src="../meta_data/icons.png"></img></th>

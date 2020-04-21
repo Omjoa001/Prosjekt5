@@ -205,6 +205,7 @@ class HowToPlay extends Component {
   }
   }
 
+
 class Resources extends Component {
 
     render() {

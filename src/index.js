@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Component } from 'react-simplified';
 import ReactDOM from 'react-dom';
 import { NavLink, HashRouter, Route } from 'react-router-dom';
-import { studentService, studieprogramService, scoreBoardService } from './services';
+import { scoreBoardService } from './services';
 import { Card, Row, Column, NavBar, Button, Form } from './widgets';
 import { createHashHistory } from 'history';
 
@@ -42,7 +42,7 @@ class Menu extends Component {
         </a>
       </li>
         </NavBar.Link>
-        <NavBar.Link to="/subjects">
+        <NavBar.Link to="/howToPlay">
         <li className="nav-item">
         <a className="nav-link">
           <svg
@@ -70,7 +70,7 @@ class Menu extends Component {
         </a>
       </li>
         </NavBar.Link>
-        <NavBar.Link to="/students/add">
+        <NavBar.Link to="/scoreBoard">
         <li className="nav-item">
         <a href="scoreBoard.html" className="nav-link">
           <svg
@@ -100,7 +100,7 @@ class Menu extends Component {
         </a>
       </li>
         </NavBar.Link>
-        <NavBar.Link to="/subjects/add">
+        <NavBar.Link to="/resources">
         <li className="nav-item">
         <a href="game.html" className="nav-link">
           <svg
@@ -128,7 +128,7 @@ class Menu extends Component {
         </a>
       </li>
         </NavBar.Link>
-        <NavBar.Link to="/students">
+        <NavBar.Link to="/game">
         <li className="nav-item">
         <a href="resources.html" className="nav-link">
           <svg
@@ -173,7 +173,7 @@ class Home extends Component {
   }
 }
 
-class StudentList extends Component {
+class Game extends Component {
   students = [];
 
   render() {
@@ -192,237 +192,31 @@ class StudentList extends Component {
     </div>
     );
   }
-
-
 }
 
-class SubjectList extends Component {
-  subjects = [];
+class HowToPlay extends Component {
 
   render() {
     return (
     <div className="divleft">
-      <Card title="Subjects">
-        {this.subjects.map(subject => (
-          <Row key={subject.id}>
-            <Column>
-              <NavLink to={'/subjects/' + subject.id}>{subject.name}</NavLink>
-            </Column>
-          </Row>
-        ))}
-      </Card>
-    <Button.Success onClick={this.add}>Add Subject</Button.Success>
-  </div>
+          Ya yeeeeeeeeeeeeeeeeeeeeey
+    </div>
     );
   }
-
-  mounted() {
-    studieprogramService.getStudieprogramer(subjects => {
-      this.subjects = subjects;
-    });
   }
 
-  add() {
-    history.push('/subjects/add');
-  }
+class Resources extends Component {
 
-  }
-
-class StudentDetails extends Component {
-  student = null;
-  subject = {name:""};
-  render() {
-    if (!this.student) return null;
-  //  console.log(this.student);//
-  //  console.log(this.subject);//
-    return (
+    render() {
+      return (
       <div className="divleft">
-        <h1>Kilder:</h1>
-        For styling av Scoreboard: https://www.w3schools.com/css/css_table.asp
-        For styling av bilder: https://www.w3schools.com/cssref/pr_background-image.asp
+        <p>Yeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeet</p>
       </div>
     );
+    }
   }
 
-  mounted() {
-    studentService.getStudent(this.props.match.params.id, student => {
-      this.student = student;
-    });
-
-    studieprogramService.getStudentsStudieprogram(this.props.match.params.id, subject => {
-      this.subject = subject;
-    });
-  }
-
-  delete() {
-    studentService.deleteStudent(this.student, () => {
-      history.push('/students');
-    });
-  }
-
-  edit() {
-    history.push('/students/' + this.student.id + '/edit');
-  }
-
-  cancel() {
-    history.push('/students');
-  }
-}
-
-class SubjectDetails extends Component {
-  subject = null;
-  students = [];
-  render() {
-    if (!this.subject) return null;
-    return (
-      <div className="divleft">
-        <h1>Kilder:</h1>
-        For styling av Scoreboard: https://www.w3schools.com/css/css_table.asp
-      </div>
-    );
-  }
-
-  mounted() {
-    studieprogramService.getStudieprogram(this.props.match.params.id, subject => {
-      this.subject = subject;
-    });
-
-    studentService.getStudentsFromStudieprogram(this.props.match.params.id, students => {
-      this.students = students;
-    });
-
-  }
-
-  delete() {
-    studieprogramService.deleteStudieprogram(this.subject, () => {
-      history.push('/subjects');
-    });
-  }
-
-  edit() {
-    history.push('/subjects/' + this.subject.id + '/edit');
-  }
-}
-
-class StudentEdit extends Component {
-  student = null;
-  subjects = [];
-
-  render() {
-    if (!this.student) return null;
-
-    return (
-      <div className="divleft">
-        <Card title="Edit student">
-          <Form.Label>Name:</Form.Label>
-          <Form.Input
-            type="text"
-            value={this.student.name}
-            onChange={event => (this.student.name = event.currentTarget.value)}
-          />
-          <Form.Label>Email:</Form.Label>
-          <Form.Input
-            type="text"
-            value={this.student.email}
-            onChange={event => (this.student.email = event.currentTarget.value)}
-          />
-          <Form.Label>Valg Studieprogram:</Form.Label>
-          <select
-          className="form-control"
-          value={this.student.studieprogramId}
-          onChange={event => (this.student.studieprogramId = event.currentTarget.value)}>
-          {this.subjects.map(subject => (
-          <option key={subject.id} value={subject.id}>
-            {subject.name}
-            </option>
-          ))}
-          </select>
-        </Card>
-        <Row>
-          <Column>
-            <Button.Success onClick={this.save}>Save</Button.Success>
-          </Column>
-          <Column right>
-            <Button.Light onClick={this.cancel}>Cancel</Button.Light>
-          </Column>
-        </Row>
-      </div>
-    );
-  }
-
-  mounted() {
-    studentService.getStudent(this.props.match.params.id, student => {
-      this.student = student;
-    });
-
-      studieprogramService.getStudieprogramer(results => {
-        this.subjects = results;
-      });
-  }
-
-  save() {
-    studentService.updateStudent(this.student, () => {
-      history.push('/students/' + this.props.match.params.id);
-    });
-  }
-
-  cancel() {
-    history.push('/students/' + this.props.match.params.id);
-  }
-}
-
-class SubjectEdit extends Component {
-  subject = null;
-
-  render() {
-    if (!this.subject) return null;
-
-    return (
-      <div className="divleft">
-        <Card title="Edit subject">
-          <Form.Label>Name:</Form.Label>
-          <Form.Input
-            type="text"
-            value={this.subject.name}
-            onChange={event => (this.subject.name = event.currentTarget.value)}
-          />
-          <Form.Label>Kode:</Form.Label>
-          <Form.Input
-            type="text"
-            value={this.subject.kode}
-            onChange={event => (this.subject.kode = event.currentTarget.value)}
-          />
-        </Card>
-        <Row>
-          <Column>
-            <Button.Success onClick={this.save}>Save</Button.Success>
-          </Column>
-          <Column right>
-            <Button.Light onClick={this.cancel}>Cancel</Button.Light>
-          </Column>
-        </Row>
-      </div>
-    );
-  }
-
-  mounted() {
-    studieprogramService.getStudieprogram(this.props.match.params.id, subject => {
-      this.subject = subject;
-    });
-  }
-
-  save() {
-    studieprogramService.updateStudieprogram(this.subject, () => {
-      history.push('/subjects/' + this.props.match.params.id);
-    });
-  }
-
-  cancel() {
-    history.push('/subjects/' + this.props.match.params.id);
-  }
-}
-
-class StudentAdd extends Component {
+class ScoreBoard extends Component {
   scoreBoard = [];
   render() {
     return (
@@ -449,62 +243,16 @@ class StudentAdd extends Component {
   }
 }
 
-class SubjectAdd extends Component {
-  subject = {name:"",kode:""};
-  render() {
-    if (!this.subject) return null;
-    return (
-      <div className="divleft">
-        <Card title="Edit student">
-          <Form.Label>Name:</Form.Label>
-          <Form.Input
-            type="text"
-            value={this.subject.name}
-            onChange={event => (this.subject.name = event.currentTarget.value)}
-          />
-          <Form.Label>Kode:</Form.Label>
-          <Form.Input
-            type="text"
-            value={this.subject.kode}
-            onChange={event => (this.subject.kode = event.currentTarget.value)}
-          />
-        </Card>
-        <Row>
-          <Column>
-            <Button.Success onClick={this.add}>add</Button.Success>
-          </Column>
-          <Column right>
-            <Button.Light onClick={this.cancel}>Cancel</Button.Light>
-          </Column>
-        </Row>
-      </div>
-    );
-  }
-
-  add() {
-    studieprogramService.addStudieprogram(this.subject, () => {
-      history.push('/subjects');
-    });
-  }
-
-  cancel() {
-    history.push('/subjects');
-  }
-}
 
 ReactDOM.render(
   <HashRouter>
     <div>
     <Menu />
     <Route exact path="/" component={Home} />
-    <Route exact path="/students" component={StudentList} />
-    <Route exact path="/subjects" component={SubjectList} />
-    <Route exact path="/students/:id" component={StudentDetails} />
-    <Route exact path="/subjects/:id" component={SubjectDetails} />
-    <Route exact path="/students/:id/edit" component={StudentEdit} />
-    <Route exact path="/subjects/:id/edit" component={SubjectEdit} />
-    <Route exact path="/students/add" component={StudentAdd} />
-    <Route exact path="/subjects/add" component={SubjectAdd} />
+    <Route exact path="/game" component={Game} />
+    <Route exact path="/howToPlay" component={HowToPlay} />
+    <Route exact path="/resources" component={Resources} />
+    <Route exact path="/scoreBoard" component={ScoreBoard} />
     </div>
   </HashRouter>,
   document.getElementById('body')

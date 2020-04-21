@@ -206,11 +206,22 @@ class HowToPlay extends Component {
   }
 
 class Resources extends Component {
-
+  //<th href="https://fontawesome.com/"><img src="../meta_data/icons.png"></img></th>
     render() {
       return (
       <div className="divleft">
-        <p>Yeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeet</p>
+        <table>
+        <td>
+          <form>
+            <div>
+              <a href="https://fontawesome.com/"><img src="../meta_data/icons.png" /></a>
+              <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/biOMz4puGt8?start=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <a href="https://fontawesome.com/"><img src="../meta_data/icons.png" /></a>
+            </div>
+          </form>
+        </td>
+
+        </table>
       </div>
     );
     }
@@ -221,14 +232,14 @@ class ScoreBoard extends Component {
   render() {
     return (
       <div className="divleft">
-        <table id="brukere">
-        <tr>
-          <th>Username</th><th>Highscore</th>
+        <table className="table1" id="brukere">
+        <tr className="tr1">
+          <th className="th1">Username</th><th className="th1">Highscore</th>
           </tr>
           {this.scoreBoard.map(scoreBoard => (
-           <tr key={scoreBoard.id}>
-                  <td>{scoreBoard.brukernavn}</td>
-                  <td>{scoreBoard.poeng}</td>
+           <tr className="tr1" key={scoreBoard.id}>
+                  <td className="td1">{scoreBoard.brukernavn}</td>
+                  <td className="td1">{scoreBoard.poeng}</td>
                 </tr>
               ))}
               </table>

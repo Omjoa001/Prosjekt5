@@ -181,8 +181,8 @@ class Home extends Component {
         </tr>
         <tr>
           <td className="teamQuote, td1">“People generally see what they look for”</td>
-          <td className="teamQuote, td1">"My hand have been forced"</td>
-          <td className="teamQuote, td1">"My hand have been forced"</td>
+          <td className="teamQuote, td1">inspirational quote</td>
+          <td className="teamQuote, td1">inspirational quote</td>
           <td className="teamQuote, td1">inspirational quote</td>
         </tr>
       </table>

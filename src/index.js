@@ -175,8 +175,8 @@ class Home extends Component {
           <td className="teamtext, td1">Omer Jonuzi</td></tr>
         <tr>
           <td className="teamtext, td1"><img src="../meta_data/CreatorsPictures/KoffyGoblin.jpg"></img></td>
-          <td className="teamtext, td1"><img src="../meta_data/CreatorsPictures/Zainab.png"></img></td>
-          <td className="teamtext, td1"><img src="../meta_data/CreatorsPictures/Emily.png"></img></td>
+          <td className="teamtext, td1"><img src="../meta_data/CreatorsPictures/placeholder.jpg"></img></td>
+          <td className="teamtext, td1"><img src="../meta_data/CreatorsPictures/placeholder.jpg"></img></td>
           <td className="teamtext, td1"><img src="../meta_data/CreatorsPictures/placeholder.jpg"></img></td>
         </tr>
         <tr>

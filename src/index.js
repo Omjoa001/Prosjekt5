@@ -167,14 +167,31 @@ class Home extends Component {
   render() {
     return (
       <div className="divleft">
-      <Card title="This is the Space Shooter project">Enjoy the game!</Card>
+      <table className="table1" title="This is our Space Shooter project">
+        <tr>
+          <td className="teamtext, td1">Hubert Wozny (The Koffy Goblin)</td>
+          <td className="teamtext, td1">Zainab Abbas</td>
+          <td className="teamtext, td1">Emily Ji</td>
+          <td className="teamtext, td1">Omer Jonuzi</td></tr>
+        <tr>
+          <td className="teamtext, td1"><img src="../meta_data/CreatorsPictures/KoffyGoblin.jpg"></img></td>
+          <td className="teamtext, td1"><img src="../meta_data/CreatorsPictures/Zainab.png"></img></td>
+          <td className="teamtext, td1"><img src="../meta_data/CreatorsPictures/Emily.png"></img></td>
+          <td className="teamtext, td1"><img src="../meta_data/CreatorsPictures/placeholder.jpg"></img></td>
+        </tr>
+        <tr>
+          <td className="teamQuote, td1">“People generally see what they look for”</td>
+          <td className="teamQuote, td1">"My hand have been forced"</td>
+          <td className="teamQuote, td1">"My hand have been forced"</td>
+          <td className="teamQuote, td1">inspirational quote</td>
+        </tr>
+      </table>
       </div>
     );
   }
 }
 
 class Game extends Component {
-  students = [];
 
   render() {
     return (
@@ -199,12 +216,38 @@ class HowToPlay extends Component {
   render() {
     return (
     <div className="divleft">
-          Ya yeeeeeeeeeeeeeeeeeeeeey
+    <h1>How to play</h1>
+    <p>
+      Use
+      <a
+        ><img
+          src="https://cdn.clipart.email/7226cc9b16a262f11fd63c49f0350be0_back-left-arrow-square-button-outline-comments-down-key-clipart-_880-920.jpeg"
+          alt="Square Key Clipart"
+          height="50"
+          width="50"
+      /></a>
+      and
+      <a
+        ><img
+          src="https://cdn.clipart.email/05dd33bdab17ab7af86e51406a4b1d76_right-arrow-square-button-symbol-vector-transparent-background-_820-480.jpeg"
+          alt="Transparent Background Arrow Button Png"
+          height="50"
+          width="90"
+      /></a>
+      to move. Press and
+      <a
+        ><img
+          src="https://cdn.clipart.email/6a37212fb7ba9f85578a01a70cc1672a_spacebar-key-clipart-best-graphic-sharing-_272-143.png"
+          alt="Space Bar Clipart"
+          height="52"
+          width="90"
+      /></a>
+      to shoot your enemies.
+    </p>
     </div>
     );
   }
   }
-
 
 class Resources extends Component {
   //<th href="https://fontawesome.com/"><img src="../meta_data/icons.png"></img></th>
@@ -215,9 +258,14 @@ class Resources extends Component {
         <td>
           <form>
             <div>
+              <tr><td className="a300x25"><a href="https://fontawesome.com/">Icons</a></td><td className="a300x25"><a href="https://www.youtube.com/watch?v=biOMz4puGt8">Tutorial on interactiv interfaces</a></td><td className="a300x25"><a href="https://www.w3schools.com/w3css/w3css_tables.asp">Tutorials on tables</a></td></tr>
               <a href="https://fontawesome.com/"><img src="../meta_data/icons.png" /></a>
-              <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/biOMz4puGt8?start=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              <a href="https://fontawesome.com/"><img src="../meta_data/icons.png" /></a>
+              <iframe width="300" height="300" src="https://www.youtube-nocookie.com/embed/biOMz4puGt8?start=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <a href="https://www.w3schools.com/w3css/w3css_tables.asp"><img src="../meta_data/Scoreboard.png" /></a>
+              <tr><td className="a300x25"><a href="https://www.w3schools.com/cssref/pr_background-image.asp">Tutorials on backgrounds</a></td><td className="a300x25"><a href="https://www.w3schools.com/colors/colors_picker.asp">Color picker tool</a></td><td className="a300x25"><a href="https://l.messenger.com/l.php?u=https%3A%2F%2Fmedium.com%2Fjared-mills%2Fcreating-a-simple-space-shooter-game-for-the-browser-401f8adde1ad&h=AT1ea8yLN5jd7uW5K6XdLaqIDHy_qV9_kdASxb7HOuqkzZmtCComu2gFGA27Xvix9vqfwAHXc6klytdtuKr_VKyFPLgmynwC6PG39WtD8LoPT4rDiFAtwgPWShFqSuwBJ8c6WWSOS0-YxpU">Tutorial on spaceshoter game</a></td></tr>
+              <a href="https://www.w3schools.com/cssref/pr_background-image.asp"><img src="../meta_data/Background.png" /></a>
+              <a href="https://www.w3schools.com/colors/colors_picker.asp"><img src="../meta_data/ColorPicker.png" /></a>
+              <a href="https://l.messenger.com/l.php?u=https%3A%2F%2Fmedium.com%2Fjared-mills%2Fcreating-a-simple-space-shooter-game-for-the-browser-401f8adde1ad&h=AT1ea8yLN5jd7uW5K6XdLaqIDHy_qV9_kdASxb7HOuqkzZmtCComu2gFGA27Xvix9vqfwAHXc6klytdtuKr_VKyFPLgmynwC6PG39WtD8LoPT4rDiFAtwgPWShFqSuwBJ8c6WWSOS0-YxpU"><img src="../meta_data/SpaceShoterGame.png" /></a>
             </div>
           </form>
         </td>

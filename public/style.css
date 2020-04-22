@@ -196,6 +196,12 @@ transform: rotate(0deg);
   position: absolute;
 }
 .ufoClass {
+  background-image: url("../src/Bilder/ufo.png"); /* The image used */
+  background-color: transparent; /* Used if the image is unavailable */
+  height: 500px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
   bottom: 800px;
   display: inline-block;
   width: 40px;

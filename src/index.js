@@ -167,7 +167,8 @@ class Home extends Component {
   render() {
     return (
       <div className="divleft">
-      <table className="table1" title="This is our Space Shooter project">
+      We are Team 5, and this is our project!
+      {/*<table className="table1" title="This is our Space Shooter project">
         <tr>
           <td className="teamtext, td1">Hubert Wozny (The Koffy Goblin)</td>
           <td className="teamtext, td1">Zainab Abbas</td>
@@ -185,7 +186,7 @@ class Home extends Component {
           <td className="teamQuote, td1">"My hand have been forced"</td>
           <td className="teamQuote, td1">inspirational quote</td>
         </tr>
-      </table>
+      </table>*/}
       </div>
     );
   }
